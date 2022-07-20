@@ -61,8 +61,8 @@ const questions = () =>{
         "GNU"
 
     ],
-    validate:  function (answer) {
-        if(answer){
+    validate:  function (answers) {
+        if(answers){
             return true;
         }else{
             return console.log ("please submit an answer");
@@ -72,10 +72,10 @@ const questions = () =>{
 },
 {
     type: "input",
-    message: "enter your Github username:",
-    name: "username",
-    validate:  function (answer) {
-        if(answer){
+    message: "How should you install your project?",
+    name: "install",
+    validate:  function (answers) {
+        if(answers){
             return true;
         }else{
             return console.log ("please submit an answer");
@@ -87,13 +87,28 @@ const questions = () =>{
     type: "input",
     message: "enter your email address",
     name: "email",
-    validate:  function (answer) {
-        if(answer){
+    validate:  function (answers) {
+        if(answers){
             return true;
         }else{
             return console.log ("please submit an answer");
         }
     }
+}
+
+{
+    type: "input",
+    message: "how do you use this program?",
+    name: "usage",
+    validate: function(answers){
+        if(answers) {
+            return true;
+        }else{
+            return console.log (" please submit an answer");
+        }
+    }
+
+
 }
 
 

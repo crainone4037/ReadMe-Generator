@@ -11,9 +11,10 @@ ${answers.descrption}
 ## Installation
 ${answers.installation}
 
-## Usage
+##license
+${answers.license}
 
-${answers.usage}
+## 
 
 
 
