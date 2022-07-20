@@ -3,6 +3,9 @@
 
 const inquirer = require("inquirer");
 const fs = require('fs');
+const utils = require ('utils');
+const generateMarkdown = require ('./Develop/utils/generateMarkdown.js');
+
 
 
 // TODO: Create an array of questions for user input
@@ -11,19 +14,40 @@ const questions =
     {
     type: 'input',
     message: 'what is the title of your project?',
-    name:'Title'
+    name:'Title',
+    validate:  function (answer) {
+        if(answer){
+            return true;
+        }else{
+            return console.log ("please submit an answer");
+        }
+    }
 
 },
 {  
     type: 'input',
     message: 'give a description about your project', 
     name: 'Description',
+    validate:  function (answer) {
+        if(answer){
+            return true;
+        }else{
+            return console.log ("please submit an answer");
+        }
+    }
 
 },
 {
     type: "input",
     name: "installation",
     message: "Describe the installation process: ",
+    validate:  function (answer) {
+        if(answer){
+            return true;
+        }else{
+            return console.log ("please submit an answer");
+        }
+    }
 
 },
 {
@@ -36,19 +60,40 @@ const questions =
         "Mozilla",
         "GNU"
 
-    ]
+    ],
+    validate:  function (answer) {
+        if(answer){
+            return true;
+        }else{
+            return console.log ("please submit an answer");
+        }
+    }
 
 },
 {
     type: "input",
     message: "enter your Github username:",
-    name: "username"
+    name: "username",
+    validate:  function (answer) {
+        if(answer){
+            return true;
+        }else{
+            return console.log ("please submit an answer");
+        }
+    }
 },
 
 {
     type: "input",
     message: "enter your email address",
-    name: "email"
+    name: "email",
+    validate:  function (answer) {
+        if(answer){
+            return true;
+        }else{
+            return console.log ("please submit an answer");
+        }
+    }
 }
 
 
@@ -69,7 +114,20 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+try {
+    const response = await inquirer.prompt(questions);
+    console.log (response);
+
+    
+
+    
+        
+}
+} 
+
+
 
 // Function call to initialize app
 init();
